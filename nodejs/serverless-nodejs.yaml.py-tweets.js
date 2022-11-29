@@ -30,7 +30,7 @@ async function getRequest() {
     })
 
     if (res.body) {
-        return JSON.stringify(res.body, nul, "\t");
+        return JSON.stringify(res.body, null, "\t");
     } else {
         throw new Error('Unsuccessful request');
     }
