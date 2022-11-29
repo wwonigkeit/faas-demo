@@ -30,7 +30,7 @@ async function getRequest() {
     })
 
     if (res.body) {
-        return JSON.stringify(res.body);
+        return JSON.stringify(res.body, nul, "\t");
     } else {
         throw new Error('Unsuccessful request');
     }
@@ -38,7 +38,7 @@ async function getRequest() {
 
 (async () => {
 
-    try {
+    try {   
         // Make request
         const response = await getRequest();
         console.dir(response, {
