@@ -26,4 +26,4 @@ states:
     files:
     - key: py-tweets.js
       scope: workflow
-  transform: jq(.return.node[1])
+  transform: jq(.return.node[1].result)
