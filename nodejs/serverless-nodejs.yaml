@@ -26,9 +26,4 @@ states:
     files:
     - key: py-tweets.js
       scope: workflow
-  #transform: jq(.return.node[1].result | fromjson)
-  transition: print-all
-
-- id: print-all
-  type: noop
-  log: jq(.)
+  transform: jq(.return.node[1].result | fromjson)
