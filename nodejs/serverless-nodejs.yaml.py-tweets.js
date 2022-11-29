@@ -30,8 +30,7 @@ async function getRequest() {
     })
 
     if (res.body) {
-        return JSON.parse(JSON.stringify(res.body));
-        //return JSON.stringify(res.body);
+        return JSON.stringify(res.body);
         //return res.body
     } else {
         throw new Error('Unsuccessful request');
