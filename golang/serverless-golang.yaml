@@ -25,6 +25,6 @@ states:
         - name: MAX_SEARCH_RESULTS
           value: jq(.max_search_returns) 
     files:
-    - key: py-tweets.js
+    - key: go-tweets.go
       scope: workflow
-  transform: jq(.return.node[1].result | fromjson | .)
+  #transform: jq(.return.node[1].result | fromjson | .)
