@@ -1,4 +1,4 @@
-module github.com/wwonigkeit/go-tweets
+module go-tweets
 
 go 1.19
 
