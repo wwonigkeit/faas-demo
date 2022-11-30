@@ -14,17 +14,16 @@ states:
     function: golang
     input:
       commands:
-      - command: ls -la
-      # - command: go mod init go-tweets
-      # - command: go mod tidy
-      # - command: go run go-tweets.go
-      #   envs: 
-      #   - name: BEARER_TOKEN
-      #     value: jq(.bearer_token)  
-      #   - name: TWITTER_SEARCH_STRING
-      #     value: jq(.twitter_searchstring)
-      #   - name: MAX_SEARCH_RESULTS
-      #     value: jq(.max_search_returns) 
+      - command: go1.18 mod init go-tweets
+      - command: go1.18 mod tidy
+      - command: go1.18 run go-tweets.go
+        envs: 
+        - name: BEARER_TOKEN
+          value: jq(.bearer_token)  
+        - name: TWITTER_SEARCH_STRING
+          value: jq(.twitter_searchstring)
+        - name: MAX_SEARCH_RESULTS
+          value: jq(.max_search_returns) 
     files:
     - key: go-tweets.go
       scope: workflow
