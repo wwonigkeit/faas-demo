@@ -14,7 +14,7 @@ states:
     function: golang
     input:
       commands:
-      - command: go mod initi go-tweets
+      - command: go mod init go-tweets
       - command: go mod tidy
       - command: go run go-tweets.go
         envs: 
