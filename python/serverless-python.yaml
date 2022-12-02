@@ -17,6 +17,7 @@ states:
       - command: pyenv local 3.8.13
       - command: python3 -m pip install -r requirements.txt
       - command: python3 py-tweets.py -b jq(.bearer_token) -t jq(.twitter_searchstring) -m jq(.max_search_returns)
+      - command: cp py-tweets.py > out/workflow/output.json
     files:
     - key: py-tweets.py
       scope: workflow
