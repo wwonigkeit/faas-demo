@@ -4,8 +4,10 @@ description: "This is a serverless code execution example for using a Python con
 
 functions:
 - id: python
-  image: gcr.io/direktiv/functions/python:1.0
-  type: knative-workflow
+  #image: gcr.io/direktiv/functions/python:1.0
+  service: python
+  #type: knative-workflow
+  type: knative-namespace
 
 states:
 - id: run-code
@@ -23,4 +25,4 @@ states:
       scope: workflow
     - key: requirements.txt
       scope: workflow
-  transform: jq(.return.python[3].result)
+  transform: jq(.return.python[3])
