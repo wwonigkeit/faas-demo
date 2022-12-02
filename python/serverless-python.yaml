@@ -23,4 +23,4 @@ states:
       scope: workflow
     - key: requirements.txt
       scope: workflow
-  #transform: jq(.return.python[3])
+  transform: jq(.return.python[3].result)
