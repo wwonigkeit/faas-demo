@@ -4,8 +4,8 @@ description: "This is a serverless code execution example for using a Python con
 
 functions:
 - id: python
-  image: gcr.io/direktiv/functions/python:1.0
-  type: knative-workflow
+  service: python
+  type: knative-namespace
 - id: shell
   image: gcr.io/direktiv/functions/bash:1.0
   type: knative-workflow
