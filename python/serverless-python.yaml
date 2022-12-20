@@ -6,6 +6,9 @@ functions:
 - id: python
   image: gcr.io/direktiv/functions/python:1.0
   type: knative-workflow
+- id: shell
+  image: gcr.io/direktiv/functions/bash:1.0
+  type: knative-workflow
 
 states:
 - id: run-code
@@ -25,3 +28,12 @@ states:
     - key: requirements.txt
       scope: workflow
   transform: jq(.return.python[2])
+  transition: run-shell
+
+- id: run-shell
+  type: action
+  action:
+    function: shell
+    input: 
+    commands:
+    - command: echo jq(.result[2].tweet_id)
