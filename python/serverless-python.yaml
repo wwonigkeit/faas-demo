@@ -35,5 +35,5 @@ states:
   action:
     function: shell
     input: 
-    commands:
-    - command: echo jq(.result[2].tweet_id)
+      commands:
+      - command: echo jq(.result[2].tweet_id)
