@@ -15,7 +15,7 @@ states:
     input:
       commands:
       - command: npm install needle
-      - command: node py-tweets.js
+      - command: node nodejs-tweets.js
         envs: 
         - name: BEARER_TOKEN
           value: jq(.bearer_token)  
@@ -24,6 +24,6 @@ states:
         - name: MAX_SEARCH_RESULTS
           value: jq(.max_search_returns) 
     files:
-    - key: py-tweets.js
+    - key: nodejs-tweets.js
       scope: workflow
   transform: jq(.return.node[1].result | fromjson | .)
